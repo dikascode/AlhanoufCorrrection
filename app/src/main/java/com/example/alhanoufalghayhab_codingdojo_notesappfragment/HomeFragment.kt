@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alhanoufalghayhab_codingdojo_notesappfragment.Models.NotesData
@@ -62,14 +63,13 @@ class HomeFragment : Fragment() {
     fun buttonAdd() {
         //val uuid = UUID.randomUUID().toString() is not work cause i should know how to reach it
         Bindings.addfragment.setOnClickListener {
-
-            Navigation.findNavController(Bindings.root).navigate(R.id.action_homeFragment_to_editFragment2)
+            findNavController().navigate(R.id.action_homeFragment_to_editFragment2)
             ///FragmentTransaction transaction =g
-            val supportFragment = SupportFragment()
-            requireActivity().supportFragmentManager.beginTransaction()
-                .add(this.id, supportFragment)
-                .addToBackStack("ok")
-                .commit()
+//            val supportFragment = SupportFragment()
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .add(this.id, supportFragment)
+//                .addToBackStack("ok")
+//                .commit()
 
 
 
